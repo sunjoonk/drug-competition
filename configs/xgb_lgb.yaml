@@ -1,0 +1,41 @@
+# configs/xgb_lgb.yaml
+
+seed: 42
+model_type: xgboost  # 또는 'lgbm' 으로 변경 가능
+
+training:
+  val_ratio: 0.2
+
+paths:
+  data_dir: ./data
+  model_dir: ./outputs/models
+  result_dir: ./outputs/submissions
+  submission_file_xgb: xgb_results.csv
+  submission_file_lgb: lgb_results.csv
+
+# XGBoost 파라미터 범위
+xgb_params:
+  n_estimators:      [100, 1000]
+  learning_rate:     [0.01, 0.3]
+  max_depth:         [3, 15]
+  min_child_weight:  [1, 10]
+  gamma:             [0.0, 5.0]
+  subsample:         [0.5, 1.0]
+  colsample_bytree:  [0.5, 1.0]
+  colsample_bylevel: [0.5, 1.0]
+  colsample_bynode:  [0.5, 1.0]
+  reg_alpha:         [0.0, 10.0]
+  reg_lambda:        [0.0, 10.0]
+  max_delta_step:    [0, 10]
+
+# LightGBM 파라미터 범위
+lgb_params:
+  num_leaves:        [20, 150]
+  learning_rate:     [0.01, 0.3]
+  max_depth:         [3, 15]
+  min_child_samples: [5, 100]
+  subsample:         [0.5, 1.0]
+  colsample_bytree:  [0.5, 1.0]
+  reg_alpha:         [0.0, 10.0]
+  reg_lambda:        [0.0, 10.0]
+  min_split_gain:    [0.0, 0.5]

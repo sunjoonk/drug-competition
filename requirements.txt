@@ -1,0 +1,22 @@
+# Core
+numpy>=1.23.0
+pandas>=1.5.0
+scikit-learn>=1.1.0
+joblib>=1.2.0
+pyyaml>=6.0
+
+# Deep Learning
+torch>=2.0.0
+# 아래 torch-scatter, torch-sparse는 torch-geometric 설치 시 의존성
+torch-geometric>=2.3.0
+
+# Chemical features
+rdkit-pypi>=2022.9.5
+
+# Tree-based models
+xgboost>=1.7.0
+lightgbm>=3.3.5
+
+# Optimization
+bayesian-optimization>=1.4.3
+scipy>=1.10.0

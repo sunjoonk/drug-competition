@@ -1,0 +1,29 @@
+# configs/gine.yaml
+
+seed: 42
+
+model_type: gine
+
+training:
+  batch_size: 32
+  epochs: 300
+  val_ratio: 0.2
+  early_stopping: 50
+
+model:
+  hidden_dim: 128
+  num_layers: 4
+  dropout: 0.3
+  learning_rate: 0.001
+
+optuna:
+  enabled: true
+  n_trials: 50
+  timeout: 7200  # seconds
+  patience: 30
+
+paths:
+  data_dir: ./data
+  model_dir: ./outputs/models
+  result_dir: ./outputs/submissions
+  submission_file: optimized_gine.csv
